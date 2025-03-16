@@ -1,0 +1,24 @@
+namespace: test
+replicaCount: 1
+
+image:
+  repository: "misbahashim/bgame" 
+  tag: "latest"
+  pullPolicy: Always
+
+containerPort: 8080
+
+service:
+  type: NodePort
+  port: 80
+  targetPort: 8080
+  protocol: "TCP"
+
+
+ingress:
+  enabled: true
+  scheme: internet-facing
+  listenPorts: '[{"HTTP": 80}]'
+  targetType: ip
+  backendProtocol: HTTP
+  servicePort: 80
