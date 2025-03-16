@@ -14,7 +14,7 @@ pipeline {
     stages {
         stage('Git Checkout') {
             steps {
-               git branch: 'main', url: 'https://github.com/MisbaHashimT/ci-cd.git'
+               git branch: 'main', url: 'https://github.com/misba272/CI-CD.git'
             }
         }
         
